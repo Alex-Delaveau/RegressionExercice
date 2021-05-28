@@ -1,0 +1,35 @@
+resolver: lts-15.5
+flags: {}
+extra-include-dirs:
+  - ../../hasktorch/deps/libtorch/include
+  - ../../hasktorch/deps/mklml/include
+  - ../../hasktorch/deps/libtorch/include/torch/csrc/api/include
+extra-lib-dirs:
+  - ../../hasktorch/deps/libtorch/lib
+  - ../../hasktorch/deps/mklml/lib
+extra-deps:
+  - ../../hasktorch/codegen
+  - ../../hasktorch/libtorch-ffi
+  - ../../hasktorch/libtorch-ffi-helper
+  - ../../hasktorch/hasktorch
+  - inline-c-cpp-0.4.0.0
+  - inline-c-0.9.0.0@sha256:7b5aa24a265cb50fd71f1a2595506f5a7dec98edcf40b7fbe617193668a90f31,3249
+  - regex-tdfa-1.3.1.0@sha256:bec13812a56a904ff3510caa19fe1b3ce3939e303604b1bcb3162771c52311ba,6324
+  - regex-base-0.94.0.0@sha256:44aa95ca762294ffbb28cf0af9c567d93b5d2c56e4f38ce5385a257d899f968e,2253
+# hasktorch
+  - ghc-typelits-natnormalise-0.7
+  - ghc-typelits-knownnat-0.7
+  - ghc-typelits-extra-0.3.2
+# examples/typed-transformer
+  - git: git://github.com/hasktorch/pipes-text.git
+    commit: 3dd3d9519306ea06f0c15ad71bdf57e1dfd0b747
+# experimental/dataloader-cifar10
+  - datasets-0.4.0@sha256:9bfd5b54c6c5e1e72384a890cf29bf85a02007e0a31c98753f7d225be3c7fa6a,4929
+  - streaming-attoparsec-1.0.0.1@sha256:fe9b878072423d3f075534fe8af24722d9ded1a1129e9a6ed5b71c4a29681b39,1146
+  - streaming-cassava-0.1.0.1@sha256:2d1dfeb09af62009e88311fe92f44d06dafb5cdd38879b437ea6adb3bc40acfe,1739
+# hasktorch-tools
+  - Chart-cairo-1.9.1
+  - cairo-0.13.8.0
+  - gtk2hs-buildtools-0.13.8.0
+  - git: https://github.com/DaisukeBekki/juman-tools.git
+    commit: 4912fb58d3b45d5f996c7faf277668c294f473ec
