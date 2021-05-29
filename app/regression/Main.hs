@@ -44,7 +44,7 @@ main = do
   let testData = [head dataSet]
   let tuples = dataTuple dataString
   --Training
-  let iter = 100 :: Int
+  let iter = 1500 :: Int
       device = Device CPU 0
   initModel <- sample $ LinearHypParams device 1 1
   ((trainedModel, _), losses) <- mapAccumM [1 .. iter] (initModel, GD) $ \epoc (model, opt) -> do
@@ -71,7 +71,7 @@ main = do
   
   drawLearningCurve "plots/graph-reg.png" "Learning Curve" [("", reverse losses)]
   plotDots [(PNG "plots/list.png"),(Title "Training set")] tuples
-  plotFunc [(PNG "plots/funcPlot.png"),(Title "List"),(XLabel "X"),(YLabel "Y")] (linearScale 10000 (0,100)) (\x-> (weightValue*x + biasValue))
+  plotFunc [(PNG "plots/funcPlot.png"),(Title "List"),(XLabel "X"),(YLabel "Y")] (linearScale 100000 (0,100)) (\x-> (weightValue*x + biasValue))
   print loadedModel
   putStr "\nPrediction: "
   print y'
