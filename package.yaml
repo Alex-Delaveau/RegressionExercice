@@ -87,6 +87,11 @@ executables:
     source-dirs:  app/csvTraining
     ghc-options:  [-threaded, -rtsopts, -with-rtsopts=-N]
     dependencies: hasktorch-tools
+  plot:
+    main:         Main.hs
+    source-dirs:  app/plot
+    ghc-options:  [-threaded, -rtsopts, -with-rtsopts=-N]
+    dependencies: hasktorch-tools
 #  getCovid19data:
 #    main:                Main.hs
 #    source-dirs:         app/covid19

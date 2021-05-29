@@ -49,4 +49,3 @@ linearLayer :: LinearParams -> Tensor -> Tensor
 linearLayer LinearParams{..} input =
   squeezeAll $ ((toDependent weight) `matmul` input) + (toDependent bias)
 --linearLayer LinearParams{..} = linear (Linear weight bias)
-
