@@ -14,11 +14,14 @@ main = do
     let Right dataString = csv
     let dataFloat = toData dataString
     let tuples = dataTuple dataString
+    print dataString
+    print dataFloat
+    print (length (fst (head dataFloat)))
     print tuples
 
 
 toData :: [[String]] -> [([Float], Float)]
-toData x = map (\[xs,x] -> ([xs],x)) $ map (map (read::String->Float)) $ tail x
+toData x = map (\x -> (init x,last x)) $ map (map (read::String->Float)) $ tail x
 
 dataTuple :: [[String]] -> [(Float, Float)]
 dataTuple x =  map (\[xs,x] -> (xs,x)) $ map (map (read::String->Float)) $ tail x
